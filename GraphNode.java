@@ -1,6 +1,7 @@
 public class GraphNode {
     String name;
     String match;
+    GraphNode next = null;
 
     public GraphNode(String name) {
         this.name = name;
