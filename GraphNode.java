@@ -5,7 +5,7 @@ public class GraphNode {
     String match;
     int flow = 0;
     int capacity = 1;
-    ArrayList<GraphNode> adj;
+    ArrayList<GraphNode> adj = new ArrayList<>();
 
     public GraphNode(String name) {
         this.name = name;

@@ -53,8 +53,8 @@ public class Graph {
         from.addAdj(to);
       }
 
-      for(GraphNode vertex : vertices) {
-        System.out.println(vertex.name);
+      for(int idx = 1; idx <= size; ++idx) {
+        System.out.println(vertices[idx].name);
       }
 
       sc.close();
