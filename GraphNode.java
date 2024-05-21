@@ -1,23 +1,17 @@
+import java.util.ArrayList;
+
 public class GraphNode {
     String name;
     String match;
-    GraphNode next = null;
+    int flow = 0;
+    int capacity = 1;
+    ArrayList<GraphNode> adj;
 
     public GraphNode(String name) {
         this.name = name;
     }
+
+    public void addAdj(GraphNode node) {
+        adj.add(node);
+    }
 }
-
-
-/*
- * struct GraphNode { // beginning of an adjacency list
-
-  EdgeNode *edgeHead; // head of the list of edges
-
-  string data; // data information about each node
-
-  bool visited;
-};
- * 
- * 
- */

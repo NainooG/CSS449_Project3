@@ -5,64 +5,62 @@ import java.util.LinkedList;
 import java.util.ArrayList;
 
 public class Graph {
-    private int size;
-    private ArrayList<LinkedList<GraphNode>> adjacencyList;
-    private int numEdges;
-    private String[] names;
+  private int size;
+  private int numOfEdges;
+  private GraphNode[] vertices;
+  private GraphNode source = new GraphNode("source");
+  private GraphNode sink = new GraphNode("sink");
 
-    public Graph(File file) {
-        try {
-            Scanner scan = new Scanner(file);
+  public Graph(File file) {
+    try {
+      Scanner sc = new Scanner(file);
 
-            // method here
-            this.size = Integer.parseInt(scan.nextLine());
+      // Capture size
+      this.size = Integer.parseInt(sc.nextLine());
 
-            // i have arraylist of linkedlists,
-            // create graphnode, insert into linkedlist, inssert into arraylist
+      // Iniatializes vertices field
+      this.vertices = new GraphNode[size + 1];
 
-            // method here
-            this.adjacencyList = new ArrayList<>();
+      // Left side of bipartite graph
+      // Connected to source
+      for(int idx = 1; idx <= (size / 2); ++idx) {
+        String name = sc.nextLine();
+        GraphNode newNode = new GraphNode(name);
+        vertices[idx] = newNode;
+        source.addAdj(newNode);
+      }
 
-            // method here, for each adjacency list ,add the persons name
-            for (int i = 0; i < this.size; i++) {
-                LinkedList<GraphNode> list = new LinkedList<>();
-                this.adjacencyList.add(list);
-            }
+      // Right side of bipartite graph
+      // Connected to sink
+      for(int idx = ((size / 2) + 1); idx <= size; ++idx) {
+        String name = sc.nextLine();
+        GraphNode newNode = new GraphNode(name);
+        newNode.addAdj(sink);
+        vertices[idx] = newNode;
+      }
 
-            // method here
-            this.names = new String[this.size];
-            
-            for (int i = 0; i < this.size; i++) {
-                String name = scan.nextLine();
-                this.names[i] = name;
-            }
+      // Read edges
+      this.numOfEdges = Integer.parseInt(sc.nextLine());
 
-            this.numEdges = Integer.parseInt(scan.nextLine());
+      // Establish edges between vertices
+      for(int idx = 0; idx < this.numOfEdges; ++idx) {
+        String edge = sc.nextLine();
+        Scanner sc1 = new Scanner(edge);
 
-            for (int i = 0; i < this.numEdges; i++) {
-                Scanner lineScanner = new Scanner(scan.nextLine());
-                int from = lineScanner.nextInt();
-                int to = lineScanner.nextInt();
+        GraphNode from = vertices[sc1.nextInt()];
+        GraphNode to = vertices[sc1.nextInt()];
 
-                // have addEdge method
-                LinkedList<GraphNode> currentList = this.adjacencyList.get(from - 1);
+        from.addAdj(to);
+      }
 
-                GraphNode newNode = new GraphNode(this.names[to - 1]);
+      for(GraphNode vertex : vertices) {
+        System.out.println(vertex.name);
+      }
 
-                currentList.add(newNode);
-            }
+      sc.close();
 
-            for(LinkedList<GraphNode> l : this.adjacencyList) {
-                for (GraphNode g : l) {
-                    System.out.print(g.name + " ");
-                }
-                System.out.println();
-            }
-
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+    } catch (FileNotFoundException e) {
+      System.err.println("File cannot be found");
     }
+  }
 }
-
