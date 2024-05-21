@@ -8,6 +8,7 @@ public class Graph {
   private int size;
   private int numOfEdges;
   private GraphNode[] vertices;
+  private int maxFlow = 0;
   private GraphNode source = new GraphNode("source");
   private GraphNode sink = new GraphNode("sink");
 
@@ -63,4 +64,7 @@ public class Graph {
       System.err.println("File cannot be found");
     }
   }
+
+
+  
 }
