@@ -32,7 +32,7 @@ import java.io.File;
  * ------------------------------------------------------------------
  */
 public static void main(String[] args) {
-  File file = new File("program3data.txt");
+  File file = new File("p3.txt");
 
   Graph graph = new Graph(file);
 
@@ -41,6 +41,6 @@ public static void main(String[] args) {
   // int flow = graph.getMaxFlow();
   // System.out.println(flow);
 
-  // graph.displayMatchings();
+  graph.displayMatchings();
 
 }
