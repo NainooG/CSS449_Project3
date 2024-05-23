@@ -32,7 +32,7 @@ import java.io.File;
  * ------------------------------------------------------------------
  */
 public static void main(String[] args) {
-  File file = new File("p3.txt");
+  File file = new File("program3data.txt");
 
   Graph graph = new Graph(file);
 
