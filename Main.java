@@ -36,4 +36,11 @@ public static void main(String[] args) {
 
   Graph graph = new Graph(file);
 
+  graph.runDinitz();
+
+  // int flow = graph.getMaxFlow();
+  // System.out.println(flow);
+
+  // graph.displayMatchings();
+
 }
