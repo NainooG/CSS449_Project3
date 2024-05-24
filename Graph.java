@@ -32,7 +32,6 @@ public class Graph {
                 newNode.reverseEdge = source;
 
                 vertices.add(newNode);
-
                 source.addAdj(newNode);
 
             }
@@ -42,10 +41,9 @@ public class Graph {
             for (int idx = ((size / 2) + 1); idx <= size; ++idx) {
                 String name = sc.nextLine();
                 GraphNode newNode = new GraphNode(name);
+                
                 newNode.addAdj(sink);
-                sink.reverseEdge = newNode; // ??
-
-                // vertices[idx] = newNode;
+                sink.reverseEdge = newNode; 
                 vertices.add(newNode);
             }
 
