@@ -19,7 +19,7 @@ import java.io.File;
 /*
  * ------------- Main -----------------------------------------------
  * Purpose:
- *      - Tests 
+ *      - Tests Dinitz's Algorithm on a bipartite graph
  * 
  * Method Parameters:
  *      - String[] args
@@ -28,19 +28,23 @@ import java.io.File;
  *      - None.
  * 
  * Post-conditions:
- *      - Returns the distance between closest pair of points
+ *      - Returns the maximum bipartite matching of a graph
  * ------------------------------------------------------------------
  */
 public static void main(String[] args) {
   File file = new File("program3data.txt");
 
+  // Create Graph
   Graph graph = new Graph(file);
 
+  // Run Dinitz's Algorithm
   graph.runDinitz();
 
-  // int flow = graph.getMaxFlow();
-  // System.out.println(flow);
+  // Debug, remove later
+  int flow = graph.getMaxFlow();
+  System.out.println(flow);
 
+  // Display Maximum Bipartite Matchings
   graph.displayMatchings();
 
 }
