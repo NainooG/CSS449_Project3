@@ -40,10 +40,6 @@ public static void main(String[] args) {
   // Run Dinitz's Algorithm
   graph.runDinitz();
 
-  // Debug, remove later
-  int flow = graph.getMaxFlow();
-  System.out.println(flow);
-
   // Display Maximum Bipartite Matchings
   graph.displayMatchings();
 
