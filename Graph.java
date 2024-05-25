@@ -277,15 +277,15 @@ public class Graph {
         // Clean up matchings
         ArrayList<GraphNode> match = this.matches.get(0);
         for (int i = 0; i < match.size(); i++) {
-            if (match.get(i).name == "sink") {
+            if (match.get(i).getName() == "sink") {
                 match.remove(i);
             }
         }
 
         // Display matchings
         for (int i = 0; i < match.size(); i += 2) {
-            System.out.print(match.get(i).name + " / ");
-            System.out.print(match.get(i + 1).name);
+            System.out.print(match.get(i).getName() + " / ");
+            System.out.print(match.get(i + 1).getName());
 
             System.out.println();
         }

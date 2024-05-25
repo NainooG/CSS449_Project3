@@ -28,6 +28,25 @@ public class GraphNode {
     }
 
     /*
+    * ------------- Retrieve a GraphNode's name -------------------
+    * Purpose:
+    *      - Gets a GraphNode's name
+    * 
+    * Method Parameters:
+    *      - None
+    * 
+    * Pre-conditions:
+    *      - None.
+    * 
+    * Post-conditions:
+    *      - Returns name of GraphNode
+    * ---------------------------------------------------------------
+    */
+    public String getName() {
+        return this.name;
+    }
+
+    /*
     * ------------- Add to A GraphNode's adjacency list -------------------
     * Purpose:
     *      - Add a new GraphNode to this current GraphNode's adjacency list
