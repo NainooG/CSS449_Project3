@@ -132,7 +132,7 @@ public class Graph {
 
         // Reset levels of GraphNodes
         for (int i = 1; i < this.vertices.size(); i++) {
-            this.vertices.get(i).level = -1;
+            this.vertices.get(i).setLevel(-1);
         }
 
         Queue<GraphNode> queue = new LinkedList<>();
@@ -151,7 +151,7 @@ public class Graph {
             }
         }
         // Return if the sink is reachable
-        return this.sink.level != -1;
+        return this.sink.getLevel() != -1;
     }
 
     /*
@@ -172,8 +172,7 @@ public class Graph {
     * ---------------------------------------------------------------
     */
     public boolean dfs(GraphNode currNode, ArrayList<GraphNode> path, Set<GraphNode> visited) {
-        // System.out.println(currNode.name);
-
+        
         // If current node is sink, augment flow and increment max flow
         if (currNode == sink) {
             this.matches.add(path);
