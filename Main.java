@@ -1,10 +1,12 @@
 /*
  * ------------- Main.java ------------------------------------------
  * Purpose:
- *     - 
+ *     Tests Dinitz's Algorithm on a given bipartite graph
  * 
  * Functionality:
- *     - 
+ *     - Reads in a file
+ *     - Creates Graph from .txt file data
+ *     - Calls Dinitz's algorithm on Graph object
  * 
  * Assumptions:
  *     - Inputted .txt file data is correctly formatted
@@ -14,8 +16,10 @@
  * ------------------------------------------------------------------
  */
 
+
 import java.io.File;
 
+public class Main {
 /*
  * ------------- Main -----------------------------------------------
  * Purpose:
@@ -31,16 +35,17 @@ import java.io.File;
  *      - Returns the maximum bipartite matching of a graph
  * ------------------------------------------------------------------
  */
-public static void main(String[] args) {
-  File file = new File("program3data.txt");
+  public static void main(String[] args) {
+    File file = new File("program3data.txt");
 
-  // Create Graph
-  Graph graph = new Graph(file);
+    // Create Graph
+    Graph graph = new Graph(file);
 
-  // Run Dinitz's Algorithm
-  graph.runDinitz();
+    // Run Dinitz's Algorithm
+    graph.runDinitz();
 
-  // Display Maximum Bipartite Matchings
-  graph.displayMatchings();
+    // Display Maximum Bipartite Matchings
+    graph.displayMatchings();
 
+  }
 }
