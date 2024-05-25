@@ -7,10 +7,19 @@
  *     - Reads in a file
  *     - Creates Graph from .txt file data
  *     - Calls Dinitz's algorithm on Graph object
+ *     - Displays maximum bipartite matchings
  * 
  * Assumptions:
  *     - Inputted .txt file data is correctly formatted
  * 
+ * Note:
+ *     - I observed that with some test cases, the program was too 
+ *            greedy with its choices. This meant that it would not 
+ *            achieve the maximum bipartite matching for bipartite
+ *            graphs that require the use of reverse edges.
+ *     - With the given test case, the correct number of matchings
+ *            was found, but it is not guaranteed it will work
+ *            for other test cases.
  * Author(s):
  *     - Khushnain Gobindpuri
  * ------------------------------------------------------------------
